@@ -105,7 +105,6 @@ Display the profit from the strategy, after the for loop has finished.
 print("First 4 days avg:", avg_calculator(prices[0:4]))
 print("Last 4 days avg:", avg_calculator(prices[-4:]))
 
-
 # Activity 5.2
 
 print()
@@ -127,8 +126,7 @@ for price in prices:
             print("Selling at:", "\t", price)
             print("Trade profit:", "\t", trade_profit)
             total_profit += trade_profit
-            buy = 0
-            
+            buy = 0     
     i += 1
    
 print("total_profit:", "\t", total_profit)
