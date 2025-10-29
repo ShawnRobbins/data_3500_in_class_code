@@ -56,18 +56,19 @@ Whoa, and then I was like Whoa"
  - print the new sentence.
 """
 
-sentence = "dude, I just biked down that mountain and at first I was like Whoa, and then I was like Whoa"
+sentence = "dude, I just biked down that mountain and at first I was like Whoa, and then I was like Whoa. Whoa is my favorite word"
 def woahify(sentence):
-    sentence = sentence.capitalize()
     words = sentence.split(" ")
+    words[0] = words[0].capitalize()
     first_whoa = True
     i = 0
    # print(words)
     for word in words:
-        if words[i][:4] == "whoa" and first_whoa:
+        if words[i][:4].lower() == "whoa" and first_whoa:
             print("changing first whoa")
+            
             first_whoa = False
-        elif words[i] == "whoa" and not first_whoa:
+        elif words[i].lower() == "whoa" and not first_whoa:
             words[i] = words[i].upper()
         else:
             pass
