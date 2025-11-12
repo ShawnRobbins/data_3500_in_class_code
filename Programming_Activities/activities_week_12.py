@@ -45,3 +45,43 @@ fav_color = input("What is your favorite color? " )
 act_2_dict = {"age":age, "fav_color":fav_color, "multiplication_table":table}
 for key in act_2_dict.keys():
     print("Key:", key, "Value:", act_2_dict[key])
+
+
+"""
+Programming Activity 3
+
+Write a program, which loads a json file "person.json" into a Python 
+dictionary. Change the contents of person["age"] by adding 1. Save the 
+updated dictionary to person.json, and verify the contents of person.json 
+have been updated.
+- load person.json in to a Python dictionary using the json.load() function
+- update the value of person["age"], increase by 1
+- save the Python dictionary to person.json
+- open person.json and verify the "age" value has increased by 1
+"""
+import json
+
+person = json.load(open("/workspaces/data_3500_in_class_code/person-2.json"))
+person["age"] = person["age"] + 1
+
+json.dump(person, open("/workspaces/data_3500_in_class_code/Programming_Activities/person.json", "w"), indent=4)
+
+"""
+Programming Activity 4
+
+Write a program that asks the user for two numbers. In a try statement, 
+attempt to divide number 1 by number 2.  If number 2 is a 0, print a 
+message in the except statement saying "Error, attempted to divide by zero"
+- create two variables, inputted by the user
+- in a  try: block attempt to divide num1 by num2
+- in a except: block print a message indicating divide by zero error
+- end program
+"""
+num1 = input("Enter first num: ")
+num2 = input("Enter second num: ")
+
+try:
+    result = int(num1)/int(num2)
+    print("result:", result)
+except:
+    print("Error, attempted to divide by zero")
